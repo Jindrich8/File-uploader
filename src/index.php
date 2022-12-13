@@ -32,7 +32,7 @@
         $MAX_FILE_SIZE = 8_000_000;
         $MIME_TYPE_GENERATOR = [
             'image' => fn ($file_name, $file_basename) =>
-            "<image src='$file_name' alt='$file_basename' />",
+            "<img src='$file_name' alt='$file_basename'>",
 
             'video' => fn ($file_name, $file_basename) =>
             "<video controls src='$file_name'></video>",
@@ -54,13 +54,13 @@
         ?>
         <form class='jumbotron' method="post" enctype="multipart/form-data">
             <label for='finput' class="form-label">Soubor ke stažení:</label>
-            <input class='form-control' id="finput" type="file" name="uploadedFile" accept='audio/*,video/*,image/*' required />
+            <input class='form-control' id="finput" type="file" name="uploadedFile" accept='audio/*,video/*,image/*' required >
             <div id='drop_zone' data-for='finput' class='drop-zone text-primary h3'>
                Drop file here
             </div>
-            <input type="submit" class="btn btn-primary mb-3" />
+            <input type="submit" class="btn btn-primary mb-3" >
         </form>
-        <script type="text/javascript">
+        <script>
             const dropZone = document.getElementById("drop_zone");
             const input = document.getElementById(dropZone.getAttribute("data-for"));
             dropZone.addEventListener("drop", function(e) {
